@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:viewModels="clr-namespace:ePostrojenje.Mobile.ViewModels"
+             mc:Ignorable="d"
+             x:Class="ePostrojenje.Mobile.Views.UgovoriPretragaPage">
+    <ContentPage.BindingContext>
+        <viewModels:UgovoriPretragaViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Label Text="Pretraga Ugovora:"
+                HorizontalOptions="CenterAndExpand" />
+                <Label Text="Od datuma:"></Label>
+                <DatePicker Date="{Binding Od}"></DatePicker>
+                <Label Text="Do datuma:"></Label>
+                <DatePicker Date="{Binding Do}"></DatePicker>
+                <Label Text="Korisnik: "></Label>
+                <Picker ItemsSource="{Binding KupciList}" SelectedItem="{Binding SelectedKupac}" ItemDisplayBinding="{Binding KorisnickoIme}"></Picker>
+                <Button Command="{Binding PretragaCommand}" Text="Pretraga"></Button>
+            </StackLayout>
+            <Label Text="Lista trazenih ugovora:"
+                HorizontalOptions="CenterAndExpand" />
+            <StackLayout Orientation="Horizontal" >
+            <Label Text="Broj ugovora" />
+            <Label Text="Datum sklapanja ugovora" />
+            </StackLayout>
+            <ListView ItemsSource="{Binding UgovoriList}" ItemSelected="ListView_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                <Label Text="{Binding BrojUgovora}" 
+                                       LineBreakMode="NoWrap" 
+                                       Style="{DynamicResource ListItemTextStyle}" 
+                                       FontSize="16" />
+                                <Label Text="{Binding DatumSklapanja}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemTextStyle}"
+                                           FontSize="16" 
+                                           HorizontalOptions="End"/>
+                            </StackLayout>
+
+                        </StackLayout>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
