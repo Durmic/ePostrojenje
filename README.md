@@ -1,14 +1,16 @@
 # ePostrojenje
 Xamarin aplikacija za podršku rada mikroenergetskog postrojenja
 
-Windows Forms:
+Windows Forms
 
-Username = desktop
 
-Password = test
+Username: desktop
 
-UWP:
+Password: test
 
-Username = mobile
+UWP
 
-Password = test
+
+Username: mobile
+
+Password: test
