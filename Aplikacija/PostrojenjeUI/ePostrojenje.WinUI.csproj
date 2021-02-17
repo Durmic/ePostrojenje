@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A9BC82B2-4F14-4452-84B9-77B2049A6EE3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PostrojenjeUI</RootNamespace>
+    <AssemblyName>PostrojenjeUI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Flurl, Version=2.8.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Flurl.2.8.2\lib\net40\Flurl.dll</HintPath>
+    </Reference>
+    <Reference Include="Flurl.Http, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Flurl.Http.2.4.2\lib\net46\Flurl.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.6.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="APIService.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKupci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKupci.Designer.cs">
+      <DependentUpon>frmKupci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKupciDetalji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKupciDetalji.Designer.cs">
+      <DependentUpon>frmKupciDetalji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmObavjestenjaDetalji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmObavjestenjaDetalji.Designer.cs">
+      <DependentUpon>frmObavjestenjaDetalji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmObavjestenja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmObavjestenja.Designer.cs">
+      <DependentUpon>frmObavjestenja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOcjenjivanje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOcjenjivanje.Designer.cs">
+      <DependentUpon>frmOcjenjivanje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOsoblje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOsoblje.Designer.cs">
+      <DependentUpon>frmOsoblje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOsobljeDetalji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOsobljeDetalji.Designer.cs">
+      <DependentUpon>frmOsobljeDetalji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPovratakLozinke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPovratakLozinke.Designer.cs">
+      <DependentUpon>frmPovratakLozinke.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistracija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistracija.Designer.cs">
+      <DependentUpon>frmRegistracija.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReklamacije.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReklamacije.Designer.cs">
+      <DependentUpon>frmReklamacije.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUgovori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUgovori.Designer.cs">
+      <DependentUpon>frmUgovori.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKupci.resx">
+      <DependentUpon>frmKupci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKupciDetalji.resx">
+      <DependentUpon>frmKupciDetalji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmObavjestenjaDetalji.resx">
+      <DependentUpon>frmObavjestenjaDetalji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmObavjestenja.resx">
+      <DependentUpon>frmObavjestenja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOcjenjivanje.resx">
+      <DependentUpon>frmOcjenjivanje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOsoblje.resx">
+      <DependentUpon>frmOsoblje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOsobljeDetalji.resx">
+      <DependentUpon>frmOsobljeDetalji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPovratakLozinke.resx">
+      <DependentUpon>frmPovratakLozinke.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistracija.resx">
+      <DependentUpon>frmRegistracija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReklamacije.resx">
+      <DependentUpon>frmReklamacije.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUgovori.resx">
+      <DependentUpon>frmUgovori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\ePostrojenje.Model.Kupci.datasource" />
+    <None Include="Properties\DataSources\ePostrojenje.Model.Osoblje.datasource" />
+    <None Include="Properties\DataSources\ePostrojenje.Model.Reklamacije.datasource" />
+    <None Include="Properties\DataSources\ePostrojenje.Model.TarifniStavovi.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ePostrojenje.Model\ePostrojenje.Model.csproj">
+      <Project>{b47ee226-aeb8-4ba8-a884-9c0876184173}</Project>
+      <Name>ePostrojenje.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DS-DIGIB.TTF" />
+    <None Include="Resources\DS-DIGII.TTF" />
+    <None Include="Resources\lock-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\name-card-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unlock-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hand-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
