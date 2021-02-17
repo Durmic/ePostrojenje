@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:viewModels="clr-namespace:ePostrojenje.Mobile.ViewModels"
+             mc:Ignorable="d"
+             x:Class="ePostrojenje.Mobile.Views.RSIIPage">
+    <ContentPage.BindingContext>
+        <viewModels:RSII25092020ViewModel></viewModels:RSII25092020ViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Picker ItemsSource="{Binding KupciList}" SelectedItem="{Binding SelectedKupac}" ItemDisplayBinding="{Binding KorisnickoIme}"></Picker>
+            <StackLayout Orientation="Horizontal">
+                <DatePicker Date="{Binding Od}"></DatePicker>
+                <DatePicker Date="{Binding Do}"></DatePicker>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Switch></Switch>
+                <Label Text="Potencijalno maliciozan?"></Label>
+            </StackLayout>
+            <Label Text="Pristup korsniku:"></Label>
+            <ListView ItemsSource="{Binding RSIIList}" ItemSelected="ListView_OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                                <Label Text="{Binding KupacId}" 
+                                       LineBreakMode="NoWrap" 
+                                       Style="{DynamicResource ListItemTextStyle}" 
+                                       FontSize="16" />
+                                <Label Text="{Binding DatumLogiranja.Year}" 
+                                       LineBreakMode="NoWrap"
+                                       Style="{DynamicResource ListItemTextStyle}"
+                                       FontSize="16" />
+                                <Label Text="/"
+                                    LineBreakMode="NoWrap" 
+                                       Style="{DynamicResource ListItemTextStyle}" 
+                                       FontSize="16" />
+                                <Label Text="{Binding DatumLogiranja.Month}" 
+                                       LineBreakMode="NoWrap"
+                                       Style="{DynamicResource ListItemTextStyle}"
+                                       FontSize="16" />
+                                <Label Text="/"
+                                    LineBreakMode="NoWrap" 
+                                       Style="{DynamicResource ListItemTextStyle}" 
+                                       FontSize="16" />
+                                <Label Text="{Binding DatumLogiranja.Day}" 
+                                       LineBreakMode="NoWrap"
+                                       Style="{DynamicResource ListItemTextStyle}"
+                                       FontSize="16" />
+                                <Switch IsEnabled="False" IsToggled ="{Binding PotencijalnoMaliciozan}" ></Switch>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Command="{Binding PonistiCommand}"  HorizontalOptions="FillAndExpand" Text="Ponisti malicioznost"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

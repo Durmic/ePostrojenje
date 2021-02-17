@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ePostrojenje.Mobile.Views.Reklamacije">
+    <ContentPage.Content>
+        <StackLayout Padding="15" >
+            <Label Text="Naslov:"/>
+            <Entry Text="{Binding Naslov }"></Entry>
+            <Label Text="Razlog podnošenja reklamacije:"/>
+            <Editor Text="{Binding Opis}" HeightRequest="400"></Editor>
+            <Button Command="{Binding InitCommand}" Text="POSALJI" VerticalOptions="EndAndExpand"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

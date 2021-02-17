@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:ePostrojenje.Mobile.ViewModels"
+             x:Class="ePostrojenje.Mobile.Views.TarifniZahtjeviPage">
+    <ContentPage.BindingContext>
+        <viewModels:TarifniZahtjeviViewModel></viewModels:TarifniZahtjeviViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Padding="15" >
+            <Label Text="Tarifni stav:"/>
+            <Picker ItemsSource="{Binding TarifniStavoviList}" SelectedItem="{Binding SelectedTarifa}" ItemDisplayBinding="{Binding Naziv}"></Picker>
+            <Label Text="Razlog podnošenja zahtjeva:"/>
+            <Editor Text="{Binding Opis}" HeightRequest="400"></Editor>
+            <Button Command="{Binding InitCommand}" Text="POSALJI" VerticalOptions="EndAndExpand"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
